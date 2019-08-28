@@ -22,8 +22,7 @@ public class ProductServiceImpl implements ProductService {
     return productRepository.findAll();
   }
 
-  @Override
-  public void changeIsInTheBasket(int id) {
-    productRepository.findById(id).get().setInTheBasket(true);
+  public void newProduct(String name){
+    productRepository.save(new Product(name));
   }
 }

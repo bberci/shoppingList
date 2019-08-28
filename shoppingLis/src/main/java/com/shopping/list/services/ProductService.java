@@ -7,5 +7,5 @@ import java.util.List;
 public interface ProductService {
 
   Iterable<Product> getAll();
-  void changeIsInTheBasket(int id);
+  void newProduct(String name);
 }

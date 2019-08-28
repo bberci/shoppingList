@@ -1,9 +1,8 @@
 package com.shopping.list.repositories;
 
+import com.shopping.list.models.Basket;
 import com.shopping.list.models.Product;
 import org.springframework.data.repository.CrudRepository;
 
-import java.util.List;
-
-public interface ProductRepository extends CrudRepository<Product, Integer> {
+public interface BasketRepositories extends CrudRepository<Basket, Integer> {
 }

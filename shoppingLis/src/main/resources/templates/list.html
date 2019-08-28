@@ -5,23 +5,26 @@
     <title>Title</title>
 </head>
 <body>
+    <a href="http://localhost:8080/back">Vissza a főoldalra</a>
     <h1>Lista</h1>
     <table>
         <tr>
-            <th>Neve</th>
-            <th>Mennyisége</th>
+            <th>Név</th>
+            <th>Mennyiség</th>
             <th>Mennyiség típusa</th>
-            <th>Kosárban</th>
+            <th>Kosár</th>
         </tr>
-        <tr th:each="product : ${products}">
-            <td th:text="${product.name}"></td>
-            <td th:text="${product.amount}"></td>
-            <td th:text="${product.typeOfAmount}"></td>
-            <td>
-                <span th:if="${product.isInTheBasket() == false}">[ ]</span>
-                <span th:unless="${product.isInTheBasket() == false}">[X]</span>
-                <button type="submit" th:action="'basket'" name="done" th:value="${product.id}">Kosárba!</button>
-            </td>
+        <tr th:each="item : ${items}">
+            <td th:text="${item.name}"></td>
+            <td th:text="${item.amount}"></td>
+            <td th:text="${item.typeOfAmount}"></td>
+            <form action="basket" method="post">
+                <td>
+                    <span th:if="${item.isInTheBasket()} == ${false}">[ ]</span>
+                    <span th:unless="${item.isInTheBasket()} == ${false}">[x]</span>
+                    <button type="submit" name="done" th:value="${item.id}">Kosárba!</button>
+                </td>
+            </form>
         </tr>
     </table>
 </body>

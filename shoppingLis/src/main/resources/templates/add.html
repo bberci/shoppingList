@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+    <a href="http://localhost:8080/back">Vissza a főoldalra</a>
+    <h1>Hozzáadás a listához</h1>
+    <form action="add-to-basket" method="post">
+        <select name="name">
+            <option th:each="product : ${products}"  th:text="${product.name}" th:value="${product.name}"></option>
+        </select>
+        <input type="number" name="amount">
+        <select name="type">
+            <option value="db">db</option>
+            <option value="kilo">kiló</option>
+            <option value="liter">liter</option>
+            <option value="uveg">üveg</option>
+            <option value="csomag">csomga</option>
+            <option value="csokor">csokor</option>
+        </select>
+        <button type="submit">Hozzáad a kosárhoz</button>
+    </form>
+    <table>
+        <tr>
+            <th>Név</th>
+            <th>Mennyiség</th>
+            <th>Mennyiség típusa</th>
+            <th>Törlés</th>
+        </tr>
+        <tr th:each="item : ${items}">
+            <td th:text="${item.name}"></td>
+            <td th:text="${item.amount}"></td>
+            <td th:text="${item.typeOfAmount}"></td>
+            <form action="delete" method="post">
+                <td><button type="submit" th:value="${item.id}" name="delete">Törlés</button> </td>
+            </form>
+        </tr>
+    </table>
+</body>
+</html>

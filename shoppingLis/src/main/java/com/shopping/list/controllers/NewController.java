@@ -1,28 +1,29 @@
 package com.shopping.list.controllers;
 
+import com.shopping.list.repositories.BasketRepositories;
+import com.shopping.list.repositories.ProductRepository;
 import com.shopping.list.services.BasketService;
 import com.shopping.list.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-public class ListController {
+public class NewController {
 
-  ProductService productService;
   BasketService basketService;
+  ProductService productService;
 
   @Autowired
-  public ListController(ProductService productService, BasketService basketService) {
-    this.productService = productService;
+  public NewController(BasketService basketService, ProductService productService) {
     this.basketService = basketService;
+    this.productService = productService;
   }
 
-  @PostMapping("/basket")
-  public String inTheBasket(@RequestParam("done") int id){
-    basketService.changeIsInTheBasket(id);
-    return "redirect:/list";
+  @PostMapping("/new-product")
+  public String newProduct(@RequestParam("name") String name){
+    productService.newProduct(name);
+    return "redirect:/";
   }
 }
