@@ -12,12 +12,21 @@ public class Product {
   private String name;
   private int amount;
   private String typeOfAmount;
+  private boolean InTheBasket = false;
 
   public Product(String name) {
     this.name = name;
   }
 
   public Product() {
+  }
+
+  public boolean isInTheBasket() {
+    return InTheBasket;
+  }
+
+  public void setInTheBasket(boolean inTheBasket) {
+    InTheBasket = inTheBasket;
   }
 
   public int getId() {
@@ -48,7 +57,7 @@ public class Product {
     return typeOfAmount;
   }
 
-  public void setTypeOfamount(String typeOfamount) {
-    this.typeOfAmount = typeOfamount;
+  public void setTypeOfAmount(String typeOfAmount) {
+    this.typeOfAmount = typeOfAmount;
   }
 }

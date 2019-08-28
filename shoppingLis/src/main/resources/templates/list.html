@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+    <h1>Lista</h1>
+    <table>
+        <tr>
+            <th>Neve</th>
+            <th>Mennyisége</th>
+            <th>Mennyiség típusa</th>
+            <th>Kosárban</th>
+        </tr>
+        <tr th:each="product : ${products}">
+            <td th:text="${product.name}"></td>
+            <td th:text="${product.amount}"></td>
+            <td th:text="${product.typeOfAmount}"></td>
+            <td>
+                <span th:if="${product.isInTheBasket() == false}">[ ]</span>
+                <span th:unless="${product.isInTheBasket() == false}">[X]</span>
+                <button type="submit" th:action="'basket'" name="done" th:value="${product.id}">Kosárba!</button>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
