@@ -5,10 +5,12 @@
     <title>Title</title>
 </head>
 <body>
+    <a href="http://localhost:8080/back">Vissza a főoldalra</a>
     <h1>Új termék felvétele</h1>
     <form action="new-product" method="post">
         <input type="text" name="name">
         <button type="submit">Hozzáad</button>
     </form>
+    <p th:text="${exists}"></p>
 </body>
 </html>

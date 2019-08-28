@@ -11,4 +11,5 @@ public interface BasketService {
   void changeIsInTheBasket(int id);
   void addItemToTheList(String name, int amount, String type);
   void deleteItem(int id);
+  void deleteAll();
 }

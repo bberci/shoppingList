@@ -8,4 +8,7 @@ public interface ProductService {
 
   Iterable<Product> getAll();
   void newProduct(String name);
+  boolean existsInTheList(String name);
+  List<Product> notInTheList();
+  void deleteItem(int id);
 }

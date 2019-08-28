@@ -33,13 +33,19 @@ public class MainController {
 
   @RequestMapping("/add")
   public String addToList(Model model){
-    model.addAttribute("products", productService.getAll());
+    model.addAttribute("products", productService.notInTheList());
     model.addAttribute("items", basketService.getAll());
-    return "add";
+    return "addtolist";
   }
 
   @RequestMapping("/new")
   public String addNewProduct(Model model){
-    return "new";
+    return "newproduct";
+  }
+
+  @RequestMapping("/delete-item")
+  public String deleteItem(Model model){
+    model.addAttribute("products", productService.getAll());
+    return "deleteitem";
   }
 }

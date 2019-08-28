@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+    <a href="http://localhost:8080/back">Vissza a főoldalra</a>
+    <h1>Áru törlése az adatbázisból</h1>
+    <table>
+        <tr>
+            <th>Név</th>
+            <th>Törlés</th>
+        </tr>
+        <tr th:each="product : ${products}">
+            <td th:text="${product.name}"></td>
+            <form action="delete-this" method="post">
+                <td><button type="submit" th:value="${product.id}" name="dlt">Törlés</button> </td>
+            </form>
+        </tr>
+    </table>
+</body>
+</html>

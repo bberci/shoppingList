@@ -25,4 +25,10 @@ public class ListController {
     basketService.changeIsInTheBasket(id);
     return "redirect:/list";
   }
+
+  @RequestMapping("/clean-list")
+  public String cleanList(){
+    basketService.deleteAll();
+    return "redirect:/list";
+  }
 }
