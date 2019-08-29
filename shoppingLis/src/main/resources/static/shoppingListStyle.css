@@ -1,0 +1,106 @@
+body {
+    background-color: darkgrey;
+    margin-top: 30px;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 20px;
+}
+
+.title {
+    font-family: "Britannic Bold";
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: lightsteelblue;
+}
+
+a:link {
+    text-decoration: none;
+    color: #e4e4e4;
+}
+
+a:visited {
+    text-decoration: none;
+    color: #e4e4e4;
+}
+
+a:hover {
+    color: black;
+}
+
+.menu {
+    font-size: 18px;
+    color: lightsteelblue;
+    padding: 8px;
+    border-radius: 3px;
+    background-color: #5f5f5f;
+    text-align: center;
+    margin: 0 20% 8px;
+}
+
+.links {
+    text-align: center;
+}
+
+.home {
+    text-decoration: none;
+    text-align: left;
+    padding: 3px;
+    border-radius: 2px;
+    background-color: #5f5f5f;
+}
+
+.home:hover {
+    color: black;
+}
+
+table {
+    margin: 5px auto;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+table, th, td {
+    border: 1px black solid;
+}
+
+td, th {
+    padding: 3px 5px;
+}
+
+th {
+    background-color: #949494;
+}
+
+td {
+    background-color: #e4e4e4;
+}
+
+button {
+    border: none;
+    padding: 3px 5px;
+    background-color: #5f5f5f;
+    text-align: center;
+    color: white;
+    border-radius: 2px;
+}
+
+button:hover {
+    background-color: white;
+    color: #5f5f5f;
+}
+
+ .buttonForDelete {
+     text-align: center;
+     margin: 5px;
+ }
+
+ .select {
+     text-align: center;
+     margin: auto;
+ }
+
+ .addButton {
+     text-align: center;
+     margin: 7px auto;
+ }

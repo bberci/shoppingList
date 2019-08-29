@@ -2,11 +2,12 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title>Title</title>
+    <title>List</title>
+    <link rel="stylesheet" href="shoppingListStyle.css" type="text/css" />
 </head>
 <body>
-    <a href="http://localhost:8080/back">Vissza a főoldalra</a>
-    <h1>Lista</h1>
+    <a class="home" href="http://localhost:8080/back">Vissza a főoldalra</a>
+    <h1 class="title">Lista</h1>
     <table>
         <tr>
             <th>Név</th>
@@ -28,7 +29,9 @@
         </tr>
     </table>
     <form action="clean-list">
+        <div class="buttonForDelete">
         <button type="submit">Lista törlése</button>
+        </div>
     </form>
 </body>
 </html>

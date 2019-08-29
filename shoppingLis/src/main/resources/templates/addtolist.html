@@ -2,25 +2,30 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title>Title</title>
+    <title>Make new list</title>
+    <link rel="stylesheet" href="shoppingListStyle.css" type="text/css" />
 </head>
 <body>
-    <a href="http://localhost:8080/back">Vissza a főoldalra</a>
-    <h1>Hozzáadás a listához</h1>
+    <a class="home" href="http://localhost:8080/back">Vissza a főoldalra</a>
+    <h1 class="title">Hozzáadás a listához</h1>
     <form action="add-to-basket" method="post">
-        <select name="name">
-            <option th:each="product : ${products}"  th:text="${product.name}" th:value="${product.name}"></option>
-        </select>
-        <input type="number" name="amount">
-        <select name="type">
-            <option value="db">db</option>
-            <option value="kilo">kiló</option>
-            <option value="liter">liter</option>
-            <option value="uveg">üveg</option>
-            <option value="csomag">csomga</option>
-            <option value="csokor">csokor</option>
-        </select>
-        <button type="submit">Hozzáad a kosárhoz</button>
+        <div class="select">
+            <select name="name">
+                <option th:each="product : ${products}"  th:text="${product.name}" th:value="${product.name}"></option>
+            </select>
+            <input type="number" name="amount">
+            <select name="type">
+                <option value="db">db</option>
+                <option value="kilo">kiló</option>
+                <option value="liter">liter</option>
+                <option value="uveg">üveg</option>
+                <option value="csomag">csomga</option>
+                <option value="csokor">csokor</option>
+            </select>
+        </div>
+        <div class="addButton">
+            <button type="submit">Hozzáad a listához</button>
+        </div>
     </form>
     <table>
         <tr>

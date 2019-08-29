@@ -2,15 +2,18 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title>Title</title>
+    <title>Add product</title>
+    <link rel="stylesheet" href="shoppingListStyle.css" type="text/css" />
 </head>
 <body>
-    <a href="http://localhost:8080/back">Vissza a főoldalra</a>
-    <h1>Új termék felvétele</h1>
-    <form action="new-product" method="post">
-        <input type="text" name="name">
-        <button type="submit">Hozzáad</button>
-    </form>
-    <p th:text="${exists}"></p>
+    <a class="home" href="http://localhost:8080/back">Vissza a főoldalra</a>
+    <h1 class="title">Új termék felvétele</h1>
+    <div class="select">
+        <form action="new-product" method="post">
+            <input type="text" name="name">
+            <button type="submit">Hozzáad</button>
+        </form>
+        <p th:text="${exists}"></p>
+    </div>
 </body>
 </html>
