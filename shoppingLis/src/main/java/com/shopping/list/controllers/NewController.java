@@ -23,7 +23,7 @@ public class NewController {
   @PostMapping("/new-product")
   public String newProduct(@RequestParam("name") String name, Model model){
     if(productService.existsInTheList(name)){
-      model.addAttribute("exists", "Már van ilyen elem az áruk listájában!");
+      model.addAttribute("exists", "Már van ilyen elem az áruk listájában, vagy üresen maradt a mező!");
       return "newproduct";
     }
     productService.newProduct(name);

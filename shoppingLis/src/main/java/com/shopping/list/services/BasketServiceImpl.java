@@ -40,4 +40,12 @@ public class BasketServiceImpl implements BasketService {
   public void deleteAll() {
     basketRepository.deleteAll();
   }
+
+  @Override
+  public boolean checkTheAmount(int amount) {
+    if(amount <= 0){
+      return true;
+    }
+    return false;
+  }
 }

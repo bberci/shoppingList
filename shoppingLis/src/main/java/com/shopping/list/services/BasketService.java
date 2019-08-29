@@ -1,9 +1,6 @@
 package com.shopping.list.services;
 
 import com.shopping.list.models.Basket;
-import com.shopping.list.models.Product;
-
-import java.util.List;
 
 public interface BasketService {
 
@@ -12,4 +9,5 @@ public interface BasketService {
   void addItemToTheList(String name, int amount, String type);
   void deleteItem(int id);
   void deleteAll();
+  boolean checkTheAmount(int amount);
 }

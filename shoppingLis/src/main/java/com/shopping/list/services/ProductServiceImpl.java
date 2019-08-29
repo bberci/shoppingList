@@ -1,6 +1,5 @@
 package com.shopping.list.services;
 
-import com.shopping.list.models.Basket;
 import com.shopping.list.models.Product;
 import com.shopping.list.repositories.BasketRepository;
 import com.shopping.list.repositories.ProductRepository;
@@ -9,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class ProductServiceImpl implements ProductService {
@@ -33,7 +33,7 @@ public class ProductServiceImpl implements ProductService {
 
   @Override
   public boolean existsInTheList(String name) {
-    if(productRepository.findByName(name.toLowerCase()).isPresent()){
+    if(name.equals("") || productRepository.findByName(name.toLowerCase()).isPresent()){
       return true;
     }
     return false;
@@ -48,7 +48,7 @@ public class ProductServiceImpl implements ProductService {
         notInTheList.remove(i);
       }
     }
-    return notInTheList;
+    return notInTheList.stream().sorted((x, y) -> x.getName().compareTo(y.getName())).collect(Collectors.toList());
   }
 
   @Override
