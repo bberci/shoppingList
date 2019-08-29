@@ -23,8 +23,10 @@ public class ProductServiceImpl implements ProductService {
   }
 
   @Override
-  public Iterable<Product> getAll() {
-    return productRepository.findAll();
+  public List<Product> getAll() {
+    List<Product> allProduct = new ArrayList<>();
+    productRepository.findAll().iterator().forEachRemaining(allProduct::add);
+    return allProduct.stream().sorted((x, y) -> x.getName().compareTo(y.getName())).collect(Collectors.toList());
   }
 
   public void newProduct(String name){
